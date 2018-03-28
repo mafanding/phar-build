@@ -1,7 +1,7 @@
 {
     "name": "mafanding/phar-build",
     "type": "project",
-    "license": "GPL",
+    "license": "MIT",
     "authors": [
         {
             "name": "mafanding",
