@@ -1,0 +1,12 @@
+{
+    "name": "mafanding/phar-build",
+    "type": "project",
+    "license": "GPL",
+    "authors": [
+        {
+            "name": "mafanding",
+            "email": "admin@mafanding.top"
+        }
+    ],
+    "require": {}
+}
