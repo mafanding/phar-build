@@ -8,5 +8,7 @@
             "email": "admin@mafanding.top"
         }
     ],
-    "require": {}
+    "require": {
+        "php": ">=7.0.28"
+    }
 }

@@ -8,6 +8,8 @@ class PharBuild
 
     const PHAR_EXTENSION = ".phar";
 
+    const DEFAULT_ENTRY_FILE = "main.php";
+
     protected $config = null;
 
     protected static $instance = null;
@@ -119,9 +121,9 @@ class PharBuild
     protected function getEntryFile()
     {
         if (is_null($this->config)) {
-            return "main.php";
+            return self::DEFAULT_ENTRY_FILE;
         }
-        return $this->config->entry_file ?? "main.php";
+        return $this->config->entry_file ?? self::DEFAULT_ENTRY_FILE;
     }
 
     protected function getStub()
