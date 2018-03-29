@@ -35,7 +35,7 @@ class PharBuild
             $phar->startBuffering();
             foreach ($this->getIncludes() as $file) {
                 if (is_dir($file)) {
-                    $iterator = new RecursiveIteratorIterator(new RecursiveDirectoryIterator($dir));
+                    $iterator = new RecursiveIteratorIterator(new RecursiveDirectoryIterator($file));
                     foreach ($iterator as $v) {
                         if ($v->getBaseName() !== "." && $v->getBaseName() !== "..") {
                             $phar->addFromString($v->getPathName(), file_get_contents($v->getPathName()));
