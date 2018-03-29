@@ -96,7 +96,7 @@ class PharBuild
         if (is_null($this->config)) {
             return dirName . self::PHAR_EXTENSION;
         }
-        return $this->config->package_name . self::PHAR_EXTENSION ?? $dirName . self::PHAR_EXTENSION;
+        return ($this->config->package_name ?? $dirName) . self::PHAR_EXTENSION;
     }
 
     protected function getIncludes()
