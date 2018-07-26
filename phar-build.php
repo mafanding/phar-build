@@ -32,7 +32,8 @@ class PharBuild
     public function make()
     {
         try {
-            $phar = new Phar($this->getPackageName(), 0, $this->getPackageName());
+            $packageName = $this->getPackageName();
+            $phar = new Phar($packageName, 0, $packageName);
             $excludes = $this->getExcludes();
             $phar->startBuffering();
             foreach ($this->getIncludes() as $file) {
@@ -56,6 +57,7 @@ class PharBuild
             ],$this->getStub());
             $phar->setStub($stub);
             $phar->stopBuffering();
+            chmod($packageName, 0755);
         } catch (Exception $e) {
             printf("%s\n", $this->composeExceptionString($e));
         }
